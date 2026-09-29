@@ -3,167 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>課外活動諮詢與簡介</title>
+
+    <title>我的課外活動｜高三學生自我介紹</title>
+
     <style>
         * {
             box-sizing: border-box;
         }
+
         body {
-            font-family: "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
-            background-color: #f4f6f9;
-            color: #333;
             margin: 0;
-            padding: 0;
+            font-family: "Microsoft JhengHei", Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #333;
         }
+
+        /* 頁首 */
         header {
-            background-color: #4CAF50;
+            background: linear-gradient(135deg, #4CAF50, #2e8b57);
             color: white;
-            padding: 20px;
+            padding: 45px 20px;
             text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
+
         header h1 {
             margin: 0;
-            font-size: 28px;
+            font-size: 38px;
         }
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
+
+        header p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        /* 主要內容 */
+        section {
+            max-width: 1100px;
+            margin: 35px auto;
             padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
         }
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
-            }
-        }
-        .card {
+
+        .intro {
             background-color: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 35px;
+            text-align: center;
         }
-        .intro-box img {
+
+        .intro h2 {
+            color: #2e8b57;
+            margin-top: 0;
+        }
+
+        .intro p {
+            line-height: 1.9;
+            font-size: 17px;
+        }
+
+        /* 活動卡片 */
+        .activities {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .activity-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .activity-card img {
             width: 100%;
-            height: 180px;
+            height: 210px;
             object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 15px;
         }
-        .intro-box h2 {
+
+        .activity-content {
+            padding: 20px;
+        }
+
+        .activity-content h3 {
+            color: #2e8b57;
             margin-top: 0;
-            color: #2c3e50;
-            font-size: 20px;
         }
-        .intro-box p {
-            line-height: 1.6;
-            color: #666;
-            font-size: 14px;
+
+        .activity-content p {
+            line-height: 1.8;
         }
-        .form-box h2 {
-            margin-top: 0;
-            color: #2c3e50;
-            font-size: 20px;
-            margin-bottom: 20px;
+
+        /* 學習收穫 */
+        .experience {
+            background-color: #e8f5e9;
+            padding: 30px;
+            margin-top: 35px;
+            border-radius: 15px;
         }
-        .form-group {
-            margin-bottom: 15px;
+
+        .experience h2 {
+            color: #2e8b57;
         }
-        label {
-            font-weight: bold;
-            display: block;
-            margin-bottom: 6px;
-            color: #444;
+
+        .experience li {
+            margin: 10px 0;
+            line-height: 1.7;
         }
-        input[type="text"] {
-            width: 100%;
-            padding: 10px 12px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 14px;
-            transition: border-color 0.2s;
+
+        /* 按鈕 */
+        .button-area {
+            text-align: center;
+            margin: 40px 0;
         }
-        input[type="text"]:focus {
-            border-color: #4CAF50;
-            outline: none;
-        }
-        input[readonly] {
-            background-color: #f8f9fa;
-            color: #6c757d;
-        }
-        .btn-group {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        input[type="submit"], input[type="button"] {
-            flex: 1;
-            padding: 10px;
-            border: none;
-            border-radius: 6px;
-            font-size: 15px;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-        input[type="submit"] {
+
+        .home-button {
+            display: inline-block;
             background-color: #4CAF50;
             color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            transition: background-color 0.3s;
         }
-        input[type="submit"]:hover {
-            background-color: #45a049;
+
+        .home-button:hover {
+            background-color: #388e3c;
         }
-        input[type="button"] {
-            background-color: #6c757d;
+
+        /* 頁尾 */
+        footer {
+            background-color: #333;
             color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
         }
-        input[type="button"]:hover {
-            background-color: #5a6268;
+
+        /* 手機版 */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 30px;
+            }
+
+            .activities {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 0 15px;
+            }
         }
     </style>
 </head>
+
 <body>
 
+    <!-- 網站標題 -->
     <header>
-        <h1>課外活動諮詢服務</h1>
+        <h1>我的課外活動</h1>
+        <p>高三學生 江俊諺 的高中生活紀錄</p>
     </header>
 
-    <div class="container">
-        <!-- 左側：課外活動簡介與圖片 -->
-        <div class="card intro-box">
-            <img src="https://act.ncnu.edu.tw/var/file/80/1080/randimg/mobileadv_1784_6610342_55375.png" alt="課外活動宣傳圖">
-            <h2>探索多元課外體驗</h2>
+    <section>
+
+        <!-- 自我介紹 -->
+        <div class="intro">
+            <h2>關於我的課外生活</h2>
+
             <p>
-                參加課外活動不僅能豐富校園生活，更是培養領導力、團隊合作與興趣專長的最佳途徑。
-                我們提供社團活動、志工服務、藝文展演及體育競賽等多樣化選擇。
+                大家好，我是 XXX，目前是一名高三學生。
+                除了努力學習課業之外，我也積極參與學校的課外活動。
             </p>
+
             <p>
-                若對活動報名、時間安排或學分抵免有任何疑問，歡迎在右側表單提出諮詢！
+                我認為高中生活不只有課本上的知識，
+                參加社團、學校活動以及和同學一起完成任務，
+                都能讓自己學習到不同的能力。
             </p>
         </div>
 
-        <!-- 右側：問題表單區塊 -->
-        <div class="card form-box">
-            <h2>活動線上諮詢</h2>
-            <form action="/activities" method="post">
-                <div class="form-group">
-                    <label for="question">你的問題：</label>
-                    <input type="text" id="question" name="question" placeholder="請輸入您想詢問的課外活動問題..." value="{{ question }}">
-                </div>
-                
-                <div class="form-group">
-                    <label for="answer">諮詢回覆：</label>
-                    <input type="text" id="answer" name="answer" readonly placeholder="送出問題後將在此顯示答案" value="{{ answer }}">
-                </div>
+        <!-- 課外活動 -->
+        <h2 style="text-align:center; color:#2e8b57;">
+            我的課外活動
+        </h2>
 
-                <div class="btn-group">
-                    <input type="submit" value="送出問題">
-                    <input type="button" value="回首頁" onclick="window.location.href='/'">
+        <div class="activities">
+
+            <!-- 活動一 -->
+            <div class="activity-card">
+                <img src="images/activity1.jpg" alt="社團活動照片">
+
+                <div class="activity-content">
+                    <h3>🎨 社團活動</h3>
+
+                    <p>
+                        高中期間，我參加了學校的社團活動。
+                        在社團裡，我和同學一起完成許多活動，
+                        也學習到如何與不同的人合作。
+                    </p>
                 </div>
-            </form>
+            </div>
+
+            <!-- 活動二 -->
+            <div class="activity-card">
+                <img src="images/activity2.jpg" alt="學校活動照片">
+
+                <div class="activity-content">
+                    <h3>🏫 校園活動</h3>
+
+                    <p>
+                        我也參加過學校舉辦的各種活動，
+                        從活動準備到實際執行，
+                        讓我了解團隊合作和溝通的重要性。
+                    </p>
+                </div>
+            </div>
+
+            <!-- 活動三 -->
+            <div class="activity-card">
+                <img src="images/activity3.jpg" alt="興趣活動照片">
+
+                <div class="activity-content">
+                    <h3>⚽ 我的興趣</h3>
+
+                    <p>
+                        我的興趣包括運動、聽音樂以及使用電腦。
+                        利用課餘時間培養自己的興趣，
+                        也能讓我在忙碌的高中生活中適度放鬆。
+                    </p>
+                </div>
+            </div>
+
         </div>
-    </div>
+
+        <!-- 活動帶來的收穫 -->
+        <div class="experience">
+
+            <h2>參加活動後，我學到了什麼？</h2>
+
+            <ul>
+                <li>學習如何與同學溝通與合作。</li>
+                <li>培養負責任的態度。</li>
+                <li>遇到問題時嘗試自己尋找解決方法。</li>
+                <li>學習安排自己的時間。</li>
+                <li>增加與不同同學相處的經驗。</li>
+                <li>更了解自己的興趣與未來方向。</li>
+            </ul>
+
+        </div>
+
+        <!-- 回首頁 -->
+        <div class="button-area">
+            <a href="index.html" class="home-button">
+                ← 回首頁
+            </a>
+        </div>
+
+    </section>
+
+    <!-- 頁尾 -->
+    <footer>
+        <p>© 2026 XXX｜高三學生自我介紹網站</p>
+    </footer>
 
 </body>
 </html>
