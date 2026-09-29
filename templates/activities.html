@@ -3,45 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ask a Question</title>
+    <title>課外活動諮詢與簡介</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
+            background-color: #f4f6f9;
             color: #333;
+            margin: 0;
+            padding: 0;
         }
         header {
             background-color: #4CAF50;
             color: white;
-            padding: 10px;
-            text-align: center;
-        }
-        section {
-            margin: 20px;
-        }
-        .form-box {
-            background-color: white;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+        .card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+        .intro-box img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .intro-box h2 {
+            margin-top: 0;
+            color: #2c3e50;
+            font-size: 20px;
+        }
+        .intro-box p {
+            line-height: 1.6;
+            color: #666;
+            font-size: 14px;
+        }
+        .form-box h2 {
+            margin-top: 0;
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 6px;
+            color: #444;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.2s;
+        }
+        input[type="text"]:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+        input[readonly] {
+            background-color: #f8f9fa;
+            color: #6c757d;
+        }
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        input[type="submit"], input[type="button"] {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        input[type="button"] {
+            background-color: #6c757d;
+            color: white;
+        }
+        input[type="button"]:hover {
+            background-color: #5a6268;
         }
     </style>
 </head>
 <body>
+
     <header>
-        <h1>課外活動</h1>
+        <h1>課外活動諮詢服務</h1>
     </header>
-    <section>
-        <div class="form-box">
+
+    <div class="container">
+        <!-- 左側：課外活動簡介與圖片 -->
+        <div class="card intro-box">
+            <img src="https://act.ncnu.edu.tw/var/file/80/1080/randimg/mobileadv_1784_6610342_55375.png" alt="課外活動宣傳圖">
+            <h2>探索多元課外體驗</h2>
+            <p>
+                參加課外活動不僅能豐富校園生活，更是培養領導力、團隊合作與興趣專長的最佳途徑。
+                我們提供社團活動、志工服務、藝文展演及體育競賽等多樣化選擇。
+            </p>
+            <p>
+                若對活動報名、時間安排或學分抵免有任何疑問，歡迎在右側表單提出諮詢！
+            </p>
+        </div>
+
+        <!-- 右側：問題表單區塊 -->
+        <div class="card form-box">
+            <h2>活動線上諮詢</h2>
             <form action="/activities" method="post">
-                <label for="question">你的問題:</label><br>
-                <input type="text" id="question" name="question" value="{{ question }}"><br><br>
-                <label for="answer">答案:</label><br>
-                <input type="text" id="answer" name="answer" readonly value="{{ answer }}"><br><br>
-                <input type="submit" value="送出">
-                <input type="button" value="回首頁" onclick="window.location.href='/'">
+                <div class="form-group">
+                    <label for="question">你的問題：</label>
+                    <input type="text" id="question" name="question" placeholder="請輸入您想詢問的課外活動問題..." value="{{ question }}">
+                </div>
+                
+                <div class="form-group">
+                    <label for="answer">諮詢回覆：</label>
+                    <input type="text" id="answer" name="answer" readonly placeholder="送出問題後將在此顯示答案" value="{{ answer }}">
+                </div>
+
+                <div class="btn-group">
+                    <input type="submit" value="送出問題">
+                    <input type="button" value="回首頁" onclick="window.location.href='/'">
+                </div>
             </form>
         </div>
-    </section>
+    </div>
+
 </body>
 </html>
