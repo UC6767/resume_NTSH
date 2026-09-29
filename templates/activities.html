@@ -8,6 +8,9 @@
     <title>課外活動｜江俊諺學習歷程</title>
 
     <style>
+
+        /* ===== 基本設定 ===== */
+
         * {
             box-sizing: border-box;
         }
@@ -19,168 +22,549 @@
             color: #333;
         }
 
+
+        /* ===== 上方標題區 ===== */
+
         header {
-            background: linear-gradient(135deg, #4CAF50, #2E8B57);
+            background: linear-gradient(
+                135deg,
+                #2563eb,
+                #4f46e5
+            );
+
             color: white;
             text-align: center;
-            padding: 60px 20px;
+            padding: 38px 20px;
         }
 
         header h1 {
-            font-size: 40px;
-            margin: 0 0 10px;
+            font-size: 32px;
+            margin: 0 0 12px;
+            font-weight: bold;
         }
 
         header p {
-            font-size: 18px;
+            font-size: 15px;
+            margin: 0 0 20px;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
 
-        .intro {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            margin-bottom: 35px;
-        }
+        /* ===== 回首頁按鈕 ===== */
 
-        .intro h2 {
-            color: #2E8B57;
-        }
-
-        .intro p {
-            line-height: 1.9;
-            font-size: 17px;
-        }
-
-        .photo-box {
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            margin-bottom: 35px;
-            text-align: center;
-        }
-
-        .photo-box img {
-            width: 100%;
-            max-height: 500px;
-            object-fit: cover;
-            border-radius: 12px;
-        }
-
-        .photo-box p {
-            color: #666;
-            margin-bottom: 0;
-        }
-
-        .back-button {
-            text-align: center;
-            margin: 40px 0;
-        }
-
-        .back-button a {
+        .back-home {
             display: inline-block;
-            background: #4CAF50;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 25px;
+            background: white;
+            color: #3156c9;
+            padding: 8px 20px;
+            border-radius: 20px;
             text-decoration: none;
+            font-size: 14px;
             transition: 0.3s;
         }
 
-        .back-button a:hover {
-            background: #2E8B57;
-            transform: translateY(-3px);
+        .back-home:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
         }
+
+
+        /* ===== 主要內容 ===== */
+
+        .container {
+            max-width: 1000px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+
+        /* ===== 標題 ===== */
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .section-title h2 {
+            margin: 0 0 10px;
+            color: #23457a;
+            font-size: 25px;
+        }
+
+        .section-title p {
+            margin: 0;
+            color: #777;
+            font-size: 14px;
+        }
+
+
+        /* ===== 卡片區 ===== */
+
+        .activity-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+
+        /* ===== 單張卡片 ===== */
+
+        .activity-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+
+            box-shadow:
+                0 3px 12px rgba(0,0,0,0.08);
+
+            transition: 0.3s;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 8px 20px rgba(0,0,0,0.13);
+        }
+
+
+        /* ===== 卡片圖片 ===== */
+
+        .activity-card img {
+            width: 100%;
+            height: 135px;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+
+        /* ===== 卡片內容 ===== */
+
+        .card-content {
+            padding: 15px;
+        }
+
+
+        /* 活動標題 */
+
+        .card-title {
+            font-size: 16px;
+            font-weight: bold;
+
+            color: #2853a5;
+
+            margin-bottom: 8px;
+        }
+
+
+        /* 年級 */
+
+        .card-year {
+            font-size: 12px;
+            color: #777;
+
+            margin-bottom: 10px;
+        }
+
+
+        /* 活動說明 */
+
+        .card-content p {
+            font-size: 13px;
+            line-height: 1.7;
+
+            color: #555;
+
+            margin: 0 0 12px;
+        }
+
+
+        /* ===== 標籤 ===== */
+
+        .tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: #e8f0ff;
+            color: #3768c9;
+
+            padding: 4px 9px;
+
+            border-radius: 20px;
+
+            font-size: 11px;
+        }
+
+
+        /* ===== 頁尾 ===== */
 
         footer {
             background: #333;
             color: white;
+
             text-align: center;
-            padding: 25px;
+
+            padding: 22px;
+
+            margin-top: 45px;
+
+            font-size: 13px;
         }
 
+
+        /* ===== 手機版 ===== */
+
         @media (max-width: 768px) {
+
             header h1 {
-                font-size: 30px;
+                font-size: 28px;
+            }
+
+            .activity-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            .activity-grid {
+                grid-template-columns: 1fr;
             }
 
             .container {
                 padding: 0 15px;
             }
         }
+
     </style>
+
 </head>
+
 
 <body>
 
+
+<!-- ==================== 頁首 ==================== -->
+
 <header>
+
     <h1>🌟 課外活動</h1>
-    <p>拓展視野，累積多元學習與團隊合作經驗</p>
+
+    <p>
+        探索興趣、累積經驗，讓高中生活更加精彩
+    </p>
+
+    <a href="index.html" class="back-home">
+        ← 回首頁
+    </a>
+
 </header>
+
+
+
+<!-- ==================== 主要內容 ==================== -->
 
 <div class="container">
 
-    <div class="intro">
+
+    <!-- 標題 -->
+
+    <div class="section-title">
 
         <h2>我的課外活動</h2>
 
         <p>
-            高中三年除了課業學習之外，我也積極參與學校的各項課外活動。
-            透過參與不同活動，我有機會與同學合作，也能學習課本以外的知識。
-        </p>
-
-        <p>
-            在活動過程中，我學習到如何與他人溝通、分配工作以及解決問題。
-            這些經驗讓我了解到團隊合作的重要性，也讓我的高中生活更加充實。
+            在課堂之外，我積極參與不同活動，從中學習合作、溝通與解決問題的能力。
         </p>
 
     </div>
 
-    <div class="photo-box">
 
-        <img src="images/activity.jpg" alt="課外活動照片">
 
-        <p>
-            課外活動紀錄
-        </p>
+    <!-- ==================== 活動卡片 ==================== -->
+
+    <div class="activity-grid">
+
+
+        <!-- 1. 自主學習 -->
+
+        <div class="activity-card">
+
+            <img
+                src="images/self-study.jpg"
+                alt="自主學習"
+            >
+
+            <div class="card-content">
+
+                <div class="card-title">
+                    📚 自主學習
+                </div>
+
+                <div class="card-year">
+                    高中三年
+                </div>
+
+                <p>
+                    利用課餘時間探索有興趣的主題，
+                    培養自主學習與資料整理的能力。
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        自主學習
+                    </span>
+
+                    <span class="tag">
+                        閱讀
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 2. 程式設計 -->
+
+        <div class="activity-card">
+
+            <img
+                src="images/programming.jpg"
+                alt="程式設計"
+            >
+
+            <div class="card-content">
+
+                <div class="card-title">
+                    💻 程式設計
+                </div>
+
+                <div class="card-year">
+                    高中期間
+                </div>
+
+                <p>
+                    接觸 HTML、CSS 與 JavaScript，
+                    嘗試製作自己的網頁作品。
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        程式設計
+                    </span>
+
+                    <span class="tag">
+                        網頁設計
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 3. 團隊合作 -->
+
+        <div class="activity-card">
+
+            <img
+                src="images/teamwork.jpg"
+                alt="團隊合作"
+            >
+
+            <div class="card-content">
+
+                <div class="card-title">
+                    🤝 團隊合作
+                </div>
+
+                <div class="card-year">
+                    高中期間
+                </div>
+
+                <p>
+                    與同學一起完成學習專題，
+                    學習分工、溝通與共同解決問題。
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        團隊合作
+                    </span>
+
+                    <span class="tag">
+                        溝通
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 4. 志工服務 -->
+
+        <div class="activity-card">
+
+            <img
+                src="images/volunteer.jpg"
+                alt="志工服務"
+            >
+
+            <div class="card-content">
+
+                <div class="card-title">
+                    ❤️ 志工服務
+                </div>
+
+                <div class="card-year">
+                    高中期間
+                </div>
+
+                <p>
+                    參與學校與社區的志工活動，
+                    從服務他人的過程中培養責任感。
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        志工
+                    </span>
+
+                    <span class="tag">
+                        責任感
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 5. 運動活動 -->
+
+        <div class="activity-card">
+
+            <img
+                src="images/sports.jpg"
+                alt="運動活動"
+            >
+
+            <div class="card-content">
+
+                <div class="card-title">
+                    ⚽ 運動活動
+                </div>
+
+                <div class="card-year">
+                    高中期間
+                </div>
+
+                <p>
+                    透過運動培養毅力，也學習如何與隊友合作，
+                    面對比賽中的挑戰。
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        運動
+                    </span>
+
+                    <span class="tag">
+                        努力
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 6. 校外活動 -->
+
+        <div class="activity-card">
+
+            <img
+                src="images/outside.jpg"
+                alt="校外活動"
+            >
+
+            <div class="card-content">
+
+                <div class="card-title">
+                    🎓 校外活動
+                </div>
+
+                <div class="card-year">
+                    高中期間
+                </div>
+
+                <p>
+                    參加校外參訪與學習活動，
+                    接觸不同環境並拓展自己的視野。
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        探索
+                    </span>
+
+                    <span class="tag">
+                        學習
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
 
     </div>
 
-    <div class="intro">
-
-        <h2>活動帶給我的收穫</h2>
-
-        <p>
-            透過課外活動，我培養了責任感、溝通能力與團隊合作能力。
-            當遇到問題時，也學會先思考解決方法，而不是直接放棄。
-        </p>
-
-        <p>
-            我認為這些經驗對未來的大學生活也會有很大的幫助。
-        </p>
-
-    </div>
-
-    <div class="back-button">
-
-        <a href="index.html">
-            ← 回到首頁
-        </a>
-
-    </div>
 
 </div>
 
+
+
+<!-- ==================== 頁尾 ==================== -->
+
 <footer>
-    <p>© 2026 江俊諺｜高中生學習歷程檔案</p>
+
+    <p>
+        © 2026 江俊諺｜高中生學習歷程檔案
+    </p>
+
 </footer>
+
 
 </body>
 
