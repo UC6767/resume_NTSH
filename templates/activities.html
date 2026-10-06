@@ -1243,8 +1243,368 @@
                         學習
 
                     </span>
+                     <div class="鳴潮 Wuthering Waves-card">
+                         <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>鳴潮 Wuthering Waves 介紹｜江俊諺學習歷程</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Microsoft JhengHei", Arial, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           上方標題區
+        ========================= */
+        header {
+            height: 170px;
+            background: linear-gradient(
+                135deg,
+                #2864df,
+                #4b3fe4
+            );
+            color: white;
+            text-align: center;
+            padding-top: 35px;
+        }
+
+        header h1 {
+            font-size: 28px;
+            margin: 0 0 12px;
+            font-weight: bold;
+        }
+
+        header p {
+            font-size: 13px;
+            margin: 0 0 16px;
+        }
+
+        /* 回首頁 */
+        .back-button {
+            display: inline-block;
+            background: white;
+            color: #3d55b8;
+            padding: 7px 17px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 12px;
+            transition: 0.2s;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        /* =========================
+           主要內容區
+        ========================= */
+        .container {
+            width: 690px;
+            max-width: calc(100% - 30px);
+            margin: 32px auto 45px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .section-title h2 {
+            margin: 0 0 10px;
+            font-size: 21px;
+            color: #23457a;
+        }
+
+        .section-title p {
+            margin: 0;
+            font-size: 11px;
+            color: #777;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           大卡片區塊
+        ========================= */
+        .hero-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            margin-bottom: 24px;
+            transition: all 0.25s ease;
+        }
+
+        .hero-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 7px 18px rgba(0, 0, 0, 0.13);
+        }
+
+        .hero-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-content {
+            padding: 18px 20px 20px;
+        }
+
+        .hero-content h3 {
+            color: #2857a5;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0 0 10px;
+        }
+
+        .hero-content p {
+            color: #555;
+            font-size: 12px;
+            line-height: 1.7;
+            margin: 0 0 14px;
+        }
+
+        /* =========================
+           卡片排列 (3欄)
+        ========================= */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 16px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 7px 18px rgba(0, 0, 0, 0.13);
+        }
+
+        .feature-card h4 {
+            color: #2857a5;
+            font-size: 13px;
+            font-weight: bold;
+            margin: 0 0 8px;
+        }
+
+        .feature-card p {
+            color: #555;
+            font-size: 10px;
+            line-height: 1.65;
+            margin: 0 0 12px;
+        }
+
+        /* =========================
+           學習歷程能力卡片區
+        ========================= */
+        .ability-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 32px;
+        }
+
+        .ability-item {
+            background: white;
+            border-radius: 10px;
+            padding: 16px 18px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid #2864df;
+            transition: all 0.25s ease;
+        }
+
+        .ability-item:hover {
+            transform: translateX(4px);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.11);
+        }
+
+        .ability-item h4 {
+            color: #23457a;
+            font-size: 13px;
+            font-weight: bold;
+            margin: 0 0 6px;
+        }
+
+        .ability-item p {
+            color: #555;
+            font-size: 11px;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* =========================
+           標籤
+        ========================= */
+        .tags {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: #e7efff;
+            color: #4070c5;
+            font-size: 8px;
+            padding: 3px 7px;
+            border-radius: 10px;
+        }
+
+        /* =========================
+           Footer
+        ========================= */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            font-size: 10px;
+        }
+
+        /* =========================
+           平板與手機響應式 RWD
+        ========================= */
+        @media (max-width: 750px) {
+            .container {
+                width: 690px;
+                max-width: calc(100% - 30px);
+            }
+        }
+
+        @media (max-width: 550px) {
+            header {
+                height: 165px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-card img {
+                height: 170px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     頁首
+========================= -->
+<header>
+    <h1>鳴潮 Wuthering Waves</h1>
+    <p>探索聲骸世界，鍛鍊反應力與戰術規劃</p>
+    <a href="index.html" class="back-button">← 回首頁</a>
+</header>
+
+<!-- =========================
+     主要內容
+========================= -->
+<div class="container">
+
+    <!-- 主介紹區塊 -->
+    <div class="hero-card">
+        <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80" alt="鳴潮 Wuthering Waves 主圖">
+        <div class="hero-content">
+            <h3>🌌 關於《鳴潮 Wuthering Waves》</h3>
+            <p>
+                《鳴潮》是一款高自由度的末世科幻開放世界動作 RPG 遊戲。玩家將扮演醒來的「漂泊者」，在遭受災變「悲鳴」侵蝕的索拉里斯世界中展開冒險。遊戲擁有流暢且高強度的戰鬥系統，結合獨創的「聲骸系統（Echoes）」、精準彈刀與極限閃避，讓每場戰鬥都極具策略性與節奏感。
+            </p>
+            <div class="tags">
+                <span class="tag">開放世界</span>
+                <span class="tag">動作 RPG</span>
+                <span class="tag">聲骸系統</span>
+                <span class="tag">極限操作</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 遊戲核心特色標題 -->
+    <div class="section-title">
+        <h2>🎮 遊戲核心特色</h2>
+        <p>結合反應速度、操作技巧與深度策略的開放世界體驗</p>
+    </div>
+
+    <!-- 3欄特色卡片排列 -->
+    <div class="feature-grid">
+        <!-- 1. 聲骸系統 -->
+        <div class="feature-card">
+            <div>
+                <h4>🌀 聲骸系統 (Echoes System)</h4>
+                <p>擊敗怪物即可獲取聲骸，搭配主聲骸技能與副聲骸屬性套裝（如熔山由儀、輕雲出月），追求最佳詞條與輸出極限。</p>
+            </div>
+            <div class="tags">
+                <span class="tag">聲骸收集</span>
+                <span class="tag">屬性搭配</span>
+            </div>
+        </div>
+
+        <!-- 2. 戰鬥機制 -->
+        <div class="feature-card">
+            <div>
+                <h4>⚔️ 戰鬥機制與極限操作</h4>
+                <p>結合精準彈刀（Parry）、極限閃避（Extreme Dodge）與變奏技能（Intro/Outro），極度考驗瞬間反應力與戰術切換節奏。</p>
+            </div>
+            <div class="tags">
+                <span class="tag">極限閃避</span>
+                <span class="tag">彈刀反擊</span>
+            </div>
+        </div>
+
+        <!-- 3. 開放世界與地圖探索 -->
+        <div class="feature-card">
+            <div>
+                <h4>🗺️ 開放世界與地圖探索</h4>
+                <p>廣闊的索拉里斯世界，結合鉤鎖、跑牆與滑翔等高流動性移動機制，創造無拘無束的立體探索與地圖解謎體驗。</p>
+            </div>
+            <div class="tags">
+                <span class="tag">鉤鎖跑牆</span>
+                <span class="tag">高流動性</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 學習歷程連結區塊 -->
+    <div class="section-title">
+        <h2>💡 學習歷程與核心能力培養</h2>
+        <p>將遊戲中的戰術思考與挑戰，轉化為實用的個人學習能力</p>
+    </div>
+
+    <div class="ability-list">
+        <div class="ability-item">
+            <h4>🧠 戰術規劃與隊伍搭配</h4>
+            <p>深入分析角色機制（主C、副C、生存位）與聲骸詞條優化，透過輸出循環計算與隊伍連招設計，顯著提升個人資料分析與策略決策能力。</p>
+        </div>
+
+        <div class="ability-item">
+            <h4>⚡ 瞬間反應與壓力處理</h4>
+            <p>在高難度副本（如深空之塔、全息戰略）中面對 BOSS 高頻攻勢，需要於微秒間判斷敵方招式前搖並實施閃避或彈刀，有效鍛鍊高壓下的冷靜專注與快速應變能力。</p>
+        </div>
 
 
+
+
+           
 
                 </div>
 
