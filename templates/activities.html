@@ -1,178 +1,52 @@
-<!DOCTYPE html>
-<html lang="zh-TW">
+<div class="menu-container"> <!-- 或你的卡片父層容器類名 -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <a href="#" class="menu-card">
+        <div class="card-icon">🏆</div>
+        <h3>競賽經驗</h3>
+        <p>參與校內外競賽，培養問題解決與團隊合作能力。</p>
+    </a>
 
-    <title>課外活動｜江俊諺學習歷程</title>
+    <a href="#" class="menu-card">
+        <div class="card-icon">🌟</div>
+        <h3>課外活動</h3>
+        <p>拓展視野，累積多元學習與團隊合作經驗。</p>
+    </a>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+    <a href="#" class="menu-card">
+        <div class="card-icon">👑</div>
+        <h3>幹部經驗</h3>
+        <p>擔任班級與校內幹部，培養領導與溝通能力。</p>
+    </a>
 
-        body {
-            margin: 0;
-            font-family: "Microsoft JhengHei", Arial, sans-serif;
-            background: #f5f7fa;
-            color: #333;
-        }
+    <a href="#" class="menu-card">
+        <div class="card-icon">🎵</div>
+        <h3>社團經驗</h3>
+        <p>透過社團活動探索興趣與培養責任感。</p>
+    </a>
 
-        /* =========================
-           上方標題區
-        ========================= */
+    <a href="#" class="menu-card">
+        <div class="card-icon">📚</div>
+        <h3>多元選修課程_字典</h3>
+        <p>選修跨領域課程，強化專業與探索未來方向。</p>
+    </a>
 
-        header {
-            height: 170px;
-            background: linear-gradient(
-                135deg,
-                #2864df,
-                #4b3fe4
-            );
-            color: white;
-            text-align: center;
-            padding-top: 35px;
-        }
+    <a href="#" class="menu-card">
+        <div class="card-icon">📊</div>
+        <h3>多元選修課程_查詢股價</h3>
+        <p>輸入股票代號（例如 2330），查詢該股票的相關資訊與前一天的收盤價。</p>
+    </a>
 
-        header h1 {
-            font-size: 28px;
-            margin: 0 0 12px;
-            font-weight: bold;
-        }
+    <a href="#" class="menu-card">
+        <div class="card-icon">🤖</div>
+        <h3>AI應用</h3>
+        <p>結合人工智慧工具，提升學習效率與創作能力。</p>
+    </a>
 
-        header p {
-            font-size: 13px;
-            margin: 0 0 16px;
-        }
+    <!-- 🔥 新增在這裡：鳴潮卡片 🔥 -->
+    <a href="#" class="menu-card">
+        <div class="card-icon">🎮</div>
+        <h3>鳴潮 Wuthering Waves</h3>
+        <p>體驗開放世界動作遊戲的戰鬥機制與世界觀，鍛鍊反應力與策略規劃能力。</p>
+    </a>
 
-        /* 回首頁 */
-
-        .back-button {
-            display: inline-block;
-            background: white;
-            color: #3d55b8;
-            padding: 7px 17px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-size: 12px;
-            transition: 0.2s;
-        }
-
-        .back-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        }
-
-        /* =========================
-           主要內容區
-        ========================= */
-
-        .container {
-            width: 690px;
-            max-width: calc(100% - 30px);
-            margin: 32px auto 45px;
-        }
-
-        /* =========================
-           我的課外活動
-        ========================= */
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 24px;
-        }
-
-        .section-title h2 {
-            margin: 0 0 10px;
-            font-size: 21px;
-            color: #23457a;
-        }
-
-        .section-title p {
-            margin: 0;
-            font-size: 11px;
-            color: #777;
-            line-height: 1.6;
-        }
-
-        /* =========================
-           卡片排列
-        ========================= */
-
-        .activity-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-        }
-
-        /* =========================
-           卡片
-        ========================= */
-
-        .activity-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-            transition: all 0.25s ease;
-        }
-
-        .activity-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 7px 18px rgba(0, 0, 0, 0.13);
-        }
-
-        /* =========================
-           卡片圖片
-        ========================= */
-
-        .activity-card img {
-            width: 100%;
-            height: 118px;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* =========================
-           卡片文字
-        ========================= */
-
-        .card-content {
-            padding: 12px 13px 13px;
-        }
-
-        .card-title {
-            color: #2857a5;
-            font-size: 13px;
-            font-weight: bold;
-            margin-bottom: 7px;
-        }
-
-        .card-year {
-            color: #777;
-            font-size: 9px;
-            margin-bottom: 8px;
-        }
-
-        .card-content p {
-            color: #555;
-            font-size: 10px;
-            line-height: 1.65;
-            margin: 0 0 10px;
-            min-height: 34px;
-        }
-
-        /* =========================
-           標籤
-        ========================= */
-
-        .tags {
-            display: flex;
-            gap: 5px;
-            flex-wrap: wrap;
-        }
-
-        .tag {
-            background: #e7efff;
-            color: #4
+</div>
